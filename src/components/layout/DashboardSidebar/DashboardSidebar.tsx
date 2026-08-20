@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAppSelector } from "@/store/hooks";
 
 import {
   Sidebar,
@@ -33,6 +34,8 @@ function SidebarLink({ item }: { item: AppRoute }) {
 }
 
 export default function DashboardSidebar() {
+  const workspaceName = useAppSelector((state) => state.dashboard.workspaceName);
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -41,9 +44,9 @@ export default function DashboardSidebar() {
             <SidebarMenuButton size="lg" asChild>
               <Link to="/" aria-label="Back to navigation home">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground border border-foreground">
-                  <span className="font-bold text-xs">W</span>
+                  <span className="font-bold text-xs">{workspaceName.charAt(0).toUpperCase()}</span>
                 </div>
-                <span className="font-mono text-sm font-semibold uppercase">Workspace</span>
+                <span className="font-mono text-sm font-semibold uppercase">{workspaceName}</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

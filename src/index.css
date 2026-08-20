@@ -51,6 +51,15 @@
 }
 
 .dark {
+  --background: #17140f;
+  --foreground: #f4f1ea;
+  --secondary: #2a251c;
+  --muted-foreground: #a39c8d;
+  --accent: #d95325;
+  --accent-hover: #e86a41;
+  --accent-foreground: #fffaf4;
+  --border: #4d4535;
+
   --sidebar: hsl(240 5.9% 10%);
   --sidebar-foreground: hsl(240 4.8% 95.9%);
   --sidebar-primary: hsl(224.3 76.3% 48%);
